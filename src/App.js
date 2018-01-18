@@ -11,9 +11,9 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Autocomplete Me</h1>
+          <h1>Autocomplete</h1>
         </header>
-        <ErrorMessage dirty={this.state.dirty} currentInput={this.state.currentInput} />
+        <ErrorMessage dirty={this.state.dirty} currentInput={this.state.currentInput} cities={this.state.cities}/>
         <Search refCallback={this.inputSetter} onSearchInput={this.onSearchInput}/>
         <List cities={this.state.cities} currentInput={this.state.currentInput}/>
       </div>

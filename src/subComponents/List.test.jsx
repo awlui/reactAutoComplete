@@ -26,9 +26,5 @@ describe('The List component', () => {
     let wrapper = shallow(<List cities={stubState.cities} dirty={stubState.dirty} currentInput={'New'}/>);
     expect(wrapper.find('li').length).toEqual(2);
   });
-  it('Will display No result when the length requirement is met and no cities start with the currentInput', () => {
-    let wrapper = shallow(<List cities={stubState.cities} dirty={stubState.dirty} currentInput={'Now'}/>);
-    expect(wrapper.find('div.errorMessage').length).toEqual(1);
-  });
 });
 

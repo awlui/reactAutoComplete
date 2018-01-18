@@ -1,8 +1,17 @@
 .cityList ul {
+  border: 1px solid rgba(0,0,0,0.2);
+  border-top: none;
+  padding: 5px;
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-.errorMessage {
-  color: red;
+.cityList ul {
+
+}
+li {
+  padding: 20px 10px;
+}
+li:hover {
+  background: rgba(0,0,0,0.2);
 }

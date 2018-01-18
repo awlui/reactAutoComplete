@@ -1,10 +1,6 @@
 .errorMessage {
   margin: 10px;
-}
-.errorInActive {
-  visibility: hidden;
-}
-.errorActive {
-  visibility: visible;
   color: red;
+  height: 50px;
+  line-height: 50px;
 }
