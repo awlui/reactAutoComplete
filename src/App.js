@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = initialState
+    this.state = initialState;
   }
   render() {
     return (
@@ -14,9 +14,8 @@ class App extends Component {
           <h1>Autocomplete Me</h1>
         </header>
         <ErrorMessage dirty={this.state.dirty} currentInput={this.state.currentInput} />
-        <Search onSearchInput={this.onSearchInput}/>
+        <Search refCallback={this.inputSetter} onSearchInput={this.onSearchInput}/>
         <List cities={this.state.cities} currentInput={this.state.currentInput}/>
-
       </div>
     );
   }
@@ -32,6 +31,10 @@ class App extends Component {
         dirty: true
       });
     }
+  }
+  inputSetter = (ref) => {
+    this._input = ref;
+    this._input.focus();
   }
 }
 

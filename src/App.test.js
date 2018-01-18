@@ -1,16 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import expect from 'expect';
 import { shallow } from 'enzyme';
 import { Search, List } from './subComponents';
 import { CITIES } from './guideConstants';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
 
 
 describe('The application component tree', () => {
@@ -46,5 +40,14 @@ describe('The application component instance', () => {
     wrapper.instance().onSearchInput({target: { value: 'dummy value'}});
     expect(wrapper.state().currentInput).toEqual('dummy value');
 
+  });
+  it('Passes the inputSetter method to the Search Component which will set _input on the App instance and trigger the input focus on initial render', () => {
+    let mockCB = jest.fn();
+    let stubRef = {
+      focus: mockCB
+    }
+    expect(mockCB.mock.calls.length).toEqual(0);
+    wrapper.instance().inputSetter(stubRef);
+    expect(mockCB.mock.calls.length).toEqual(1);
   });
 })
