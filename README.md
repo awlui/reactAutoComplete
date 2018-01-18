@@ -2,20 +2,30 @@
 >A mini search engine w/ autocomplete built with React
 
 ## Initial Thoughts after reading specification
-I have a tendency to over-engineer sometimes so when I saw that the project was react-based, I wanted to bring in redux for state management and rxjs for async management. But, this app is barebones as it gets so I wanted to halt the brakes and just utilize React with good coding practices. I want to start by fulfilling the requirements to the bare minimum and perhaps add animations/styling later. I will start off by including the Navalia(Update: I have removed Navalia. May integrate Nightwatch in the future), a headless chrome-style browser, and expect APIs to introduce e2e testing to the create-react-app workflow. I don't want to eject the scripts so I'll just loosely integrate Navalia. I will follow that up with unit tests and then minimal viable code in a TDD cycle. This workflow, called "Double loop" TDD was introduced to me by the book "Test-Driven Development with Python: Obey the Testing Goat", and I've been incorporating it into some of my newer projects...
+I have a tendency to over-engineer sometimes so when I saw that the project was react-based, I wanted to bring in redux for state management and rxjs for async management. But, this app is as barebones as it gets so I wanted to halt the brakes and just utilize React with good coding practices. I want to start by fulfilling the requirements to the bare minimum and perhaps add animations/styling later. I will start off by including the Navalia(Update: I have removed Navalia. May integrate Nightwatch in the future), a headless chrome-style browser, and expect APIs to introduce e2e testing to the create-react-app workflow. I don't want to eject the scripts so I'll just loosely integrate Navalia. I will follow that up with unit tests and then minimal viable code in a TDD cycle. This workflow, called "Double loop" TDD was introduced to me by the book "Test-Driven Development with Python: Obey the Testing Goat", and I've been incorporating it into some of my newer projects outside of Javascript...
 
-## Other thoughts
-1. Controlled or Uncontrolled Components
-2. Stateful and stateless division of components
+## Thoughts while building application
+1. Given the minimal nesting of React Components and Elements, I thought to utilize just one React Stateful Component, App. That component will be responsible for passing the state down via props to the stateless functional components.
+2. I wanted to code as idiomatically React as possible and stay away from uncontrolled components but it looks like I will have to utilize refs to fulfill the autofocus requirement.
+3. I wrote ample tests and kept code as single-purpose and modular in design as possible. Clean code over commenting, though to be honest I go back and forth on this on each project. Clean code is always a necessity but comments can seem to hinder readability at times.
+```
+/* How to build this application */
+// After git clone:
+cd reactAutoComplete/
+npm install // to install all npm modules specified in package.json
+npm run test // Optional: run the unit tests, may need to remove git history(.git) to see running tests, otherwise jest will notice no changes and not run.
+npm run start // view the application from the development server OR
+npm run build // package the application with react-scripts, a webpack wrapper.
 
 ```
-// The npm scripts are just the default create-react-app scripts, of particular importance are:
-npm run test // Unit tests
-npm run start // Start server that will host the React App
-```
-## Middle of Project Thoughts
-I have all but one of the features requested in the specification completed. The top level App Component is the only stateful component and it distributes to the other stateless components via props. The project is only using controlled components at the moment but it looks like I may need to use refs for the autofocus feature for the Search Component. I think I will just maintain statelessness of the Search Component and have the App component responsible for holding on to the ref and triggering the focus.
 
-## Final Developer Notes (Aside from possible styling and animation)
+## UX notes
+1. I keep a boolean state, 'dirty', to notify whether a user has already typed to/past the three letter character mark. Thereafter, until a refresh, every time the user reduces the input to less than 3 characters, a warning message will be displayed. I wanted to keep the form clean until actual user interaction.
+2. I bolden the characters that have been typed within the city names being displayed.
+
+
+## Final Notes
 1. I removed the Functional Tests because the Navalia API was a bit hairy to deal with. I've used protractor with Angular in the past which was fairly intuitive. More recently, I 've been learning functional testing
-with python which is fairly easy to use as well. I'll have to dig in to Nightwatch.js for awhile before I feel confident in really bringing e2e into my next project, at least with javascript.
+with python which is fairly easy to use as well. I'll have to dig in to Nightwatch.js for awhile before I feel confident in really bringing e2e into my next project, at least with javascript. The attempt at Functional test integration drained more time than I would have liked but I learned more about E2E testing for javascript outside of Angular/Protractor and Python/Django, so I guess it was worth it.
+2. I'll spend some time refining the top level components. During the styling, I cluttered some elements and made the organization less semantically sound.
+3. While I am thinking about animating this project, I also am trying to be careful not to make it look corny and overdone.
