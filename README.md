@@ -13,3 +13,5 @@ I have a tendency to over-engineer sometimes so when I saw that the project was 
 npm run test // Unit tests
 npm run func-test // Functional Tests after npm run start assuming localhost:3000 
 ```
+## Middle of Project Thoughts
+I have all but one of the features requested in the specification completed. The top level App Component is the only stateful component and it distributes to the other stateless components via props. The project is only using controlled components at the moment but it looks like I may need to use refs for the autofocus feature for the Search Component. I think I will just maintain statelessness of the Search Component and have the App component responsible for holding on to the ref and triggering the focus.
