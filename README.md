@@ -11,6 +11,9 @@ I have a tendency to over-engineer sometimes so when I saw that the project was 
 1. Given the minimal nesting of React Components and Elements, I thought to utilize just one React Stateful Component, the Autocomplete Component. That component will be responsible for passing the state down via props to the stateless functional components. The App Component itself will be a stateless component that will house the stateful Autocomplete component.
 2. I wanted to code as idiomatically React as possible and stay away from uncontrolled components but it looks like I will have to utilize refs to fulfill the autofocus requirement.
 3. I wrote ample tests and kept code as single-purpose and modular in design as possible. Clean code over commenting, though to be honest I go back and forth on this on each project. Clean code is always a necessity but comments can seem to hinder readability at times.
+
+## BUILD
+> You can build the app yourself or checkout the gh-pages @ www.andy-lui.com/reactAutoComplete/
 ```
 /* How to build this application */
 // After git clone:
