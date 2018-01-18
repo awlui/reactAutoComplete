@@ -4,6 +4,7 @@ import App from './App';
 import expect from 'expect';
 import { shallow } from 'enzyme';
 import { Search, List } from './subComponents';
+import { CITIES } from './guideConstants';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -25,3 +26,16 @@ describe('The application component tree', () => {
   });
 });
 
+describe('The application component instance', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+  it('Contains the correct initial state', () => {
+    expect(wrapper.state()).toEqual({
+      cities: CITIES,
+      currentInput: '',
+      dirty: false
+    });
+  });
+})
