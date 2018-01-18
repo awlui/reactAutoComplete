@@ -1,0 +1,10 @@
+.errorMessage {
+  margin: 10px;
+}
+.errorInActive {
+  visibility: hidden;
+}
+.errorActive {
+  visibility: visible;
+  color: red;
+}
