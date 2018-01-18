@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Search } from './subComponents';
+import { Search, List } from './subComponents';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,6 +11,7 @@ class App extends Component {
           <h1>Autocomplete Me</h1>
         </header>
         <Search />
+        <List />
       </div>
     );
   }
