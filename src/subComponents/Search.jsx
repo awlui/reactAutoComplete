@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Search = ({onSearchInput}) => (
-  <form>
-    <input type="text" className="searchField" onChange={onSearchInput} />
+  <form onSubmit={(event) => event.preventDefault() }>
+    <input type="text" className="searchField" onChange={onSearchInput}/>
   </form>
   );
 
