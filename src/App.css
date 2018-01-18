@@ -5,14 +5,3 @@ html, body {
 * {
   box-sizing: border-box;
 }
-
-.App {
-  width: 40%;
-  min-width: 700px;
-  margin: 0 auto;
-  position: relative;
-}
-
-strong {
-  font-size: 1.2em;
-}
