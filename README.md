@@ -16,7 +16,7 @@ I have a tendency to over-engineer sometimes so when I saw that the project was 
 > You can build the app yourself or checkout the gh-pages @ www.andy-lui.com/reactAutoComplete/
 ```
 /* How to build this application */
-// After git clone:
+git clone https://github.com/awlui/reactAutoComplete.git
 cd reactAutoComplete/
 npm install // to install all npm modules specified in package.json
 npm run test // Optional: run the unit tests, may need to remove git history(.git) to see running tests, otherwise jest will notice no changes and not run.
