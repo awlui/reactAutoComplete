@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Search = ({onSearchInput}) => (
+const Search = ({onSearchInput, refCallback}) => (
   <form onSubmit={(event) => event.preventDefault() }>
-    <input autofocus={true} type="text" className="searchField" onChange={onSearchInput}/>
+    <input ref={refCallback} type="text" className="searchField" onChange={onSearchInput}/>
   </form>
   );
 
