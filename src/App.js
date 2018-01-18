@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { Search, List, ErrorMessage } from './subComponents';
+import React from 'react';
 import Autocomplete from './Autocomplete/';
-import { initialState } from './guideConstants';
 import './App.css';
 
 const App = () => (

@@ -5,3 +5,11 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+header {
+  text-align: center;
+  background-color: #90B279;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
