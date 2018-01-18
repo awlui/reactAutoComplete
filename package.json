@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-scripts": "1.1.0",
+    "react-test-renderer": "^16.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --testPathPattern ./src\/Unit.*",
+    "test": "react-scripts test --env=jsdom --testPathPattern ./src/Unit.*",
     "eject": "react-scripts eject",
-    "func-test": "react-scripts test --testPathPattern ./src\/Functional.*"
+    "func-test": "react-scripts test --testPathPattern ./src/Functional.*"
   },
   "devDependencies": {
     "expect": "^22.1.0",
