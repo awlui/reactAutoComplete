@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Search = () => (
-  <h2 className="searchField">Search Field</h2>
+const Search = ({onSearchInput}) => (
+  <form>
+    <input type="text" className="searchField" onChange={onSearchInput} />
+  </form>
   );
 
 export default Search;
