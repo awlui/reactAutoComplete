@@ -1,4 +1,5 @@
 import React from 'react';
+import './List.css' ;
 
 const List = ({cities, currentInput, dirty}) => (
   <div className="cityList">
@@ -10,6 +11,9 @@ const List = ({cities, currentInput, dirty}) => (
       })
       .map((city, i) => (<li key={i}>{city}</li>)) : null }
     </ul>
+    { currentInput.length >= 3 && !cities.some((city) => {
+      return city.startsWith(currentInput);
+    }) ? <div className="errorMessage">No Results</div> : null}
   </div>
   );
 
