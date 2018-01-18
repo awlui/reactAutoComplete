@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { Search, List } from './subComponents';
-import { CITIES } from './guideConstants';
-import logo from './logo.svg';
+import { Search, List, ErrorMessage } from './subComponents';
+import { initialState } from './guideConstants';
 import './App.css';
-
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      cities: CITIES,
-      currentInput: '',
-      dirty: false
-    }
+    this.state = initialState
   }
   render() {
     return (
@@ -19,10 +13,25 @@ class App extends Component {
         <header>
           <h1>Autocomplete Me</h1>
         </header>
-        <Search />
-        <List />
+        <ErrorMessage dirty={this.state.dirty} currentInput={this.state.currentInput} />
+        <Search onSearchInput={this.onSearchInput}/>
+        <List cities={this.state.cities} currentInput={this.state.currentInput}/>
+
       </div>
     );
+  }
+
+  /* Custom Methods */
+
+  onSearchInput = (event) => {
+    this.setState({
+      currentInput: event.target.value.toLowerCase()
+    });
+    if (!this.state.dirty && this.state.currentInput.length >= 3 ) {
+      this.setState({
+        dirty: true
+      });
+    }
   }
 }
 
