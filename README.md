@@ -6,7 +6,7 @@
 >1. Fixing up the testing infrastructure, which was double-running the unit tests.
 >2. Reverse engineered some of Google search's UX such as up/down arrow navigation through autocomplete list.
 >3. The amount of props being passed through increased significantly because of 2. so I added Prop-types to keep everything in check.
->4. Wrote some more tests to keep watch of updates as well as adjust old ones to account for refactoring.
+>4. Wrote some more tests to keep watch of updates as well as adjust old ones to account for refactoring. My coverage is lower than I'd like but I ran out of time.
 
 ## Experience w/ React
 I have written a few projects with React and Angular in the past. I wrote a simple SPA engine for a previous interview challenge as well. React is by far my favorite due to its simplicity and the clean code that comes from it. I came across declarative programming first with Angular but React really made it cool. React, as well as redux, have made me a better programmer in general I think. I have a few libraries on NPM that revolve around the React/Redux ecosystem. Usually I will use them in tandem but it looks like for this project, I won't be needing redux.
