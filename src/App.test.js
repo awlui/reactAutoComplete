@@ -1,4 +1,4 @@
-import './Autocomplete/Autocomplete.test';
-import './subComponents/List.test';
-import './subComponents/Search.test';
-import './subComponents/Error.test';
+import './Autocomplete/Autocomplete.__test__';
+import './subComponents/List.__test__';
+import './subComponents/Search.__test__';
+import './subComponents/Error.__test__';
