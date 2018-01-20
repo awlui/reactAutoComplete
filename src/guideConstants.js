@@ -3,9 +3,11 @@ const cities = [
 ]
 
 const initialState = {
-      cities,
       currentInput: '',
-      dirty: false
+      dirty: false,
+      suggestedCities: [],
+      currentIndex: undefined,
+      displayList: true
     }
 
 export {
