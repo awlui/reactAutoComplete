@@ -2,7 +2,7 @@
 >A mini search engine w/ autocomplete built with React
 
 ## Update:
->I pushed a few changes after sending Mallory the github link. The pushed code is still well before the deadline. The master branch contains the untouched code that was there when I gave Mallory the link. The 'googlemimic' branch contains my updates. The updates include:
+>I pushed a few changes after sending Mallory the github link. The pushed code is still well before the deadline. The master branch contains the untouched code that was there when I gave Mallory the link. The 'googlemimic' branch contains my updates. I pushed the googlemimic branch code to the accompanying gh-pages if you want to take a quick look. I wanted to keep master w/ the same code I initially submitted w/ to avoid confusion. The updates include:
 >1. Fixing up the testing infrastructure, which was double-running the unit tests.
 >2. Reverse engineered some of Google search's UX such as up/down arrow navigation through autocomplete list.
 >3. The amount of props being passed through increased significantly because of 2. so I added Prop-types to keep everything in check.
@@ -20,7 +20,7 @@ I have a tendency to over-engineer sometimes so when I saw that the project was 
 3. I wrote ample tests and kept code as single-purpose and modular in design as possible. Clean code over commenting, though to be honest I go back and forth on this on each project. Clean code is always a necessity but comments can seem to hinder readability at times.
 
 ## BUILD
-> You can build the app yourself or checkout the gh-pages @ www.andy-lui.com/reactAutoComplete/
+> You can build the app yourself or checkout the gh-pages @ www.andy-lui.com/reactAutoComplete/ <-- Contains the googlemimic branch code not master
 ```
 /* How to build this application */
 git clone https://github.com/awlui/reactAutoComplete.git
@@ -36,8 +36,13 @@ npm run build // package the application with react-scripts, a webpack wrapper.
 1. I keep a boolean state, 'dirty', to notify whether a user has already typed to/past the three letter character mark. Thereafter, until a refresh, every time the user reduces the input to less than 3 characters, a warning message will be displayed. I wanted to keep the form clean until actual user interaction.
 2. I bolden the characters that have been typed within the city names being displayed.
 
+### googlemimic branch updates to UX:
+==============================
+1. You can navigate the autocomplete list with up/down arrow keys. Pressing up or down when at the bounds causes a loop around. 
+2. While you are navigating the list, the input element is updated w/ the currently highlighted text but it retains a copy of your input if you navigate back to the input w/o pressing enter on any of the highlighted elements.
 
 ## A few thoughts
 1. I removed the Functional Tests because the Navalia API was a bit hairy to deal with. I've used protractor with Angular in the past which was fairly intuitive. More recently, I 've been learning functional testing
 with python which is fairly easy to use as well. I'll have to dig in to Nightwatch.js for awhile before I feel confident in really bringing e2e into my next project, at least with javascript. The attempt at Functional test integration drained more time than I would have liked but I learned more about E2E testing for javascript outside of Angular/Protractor and Python/Django, so I guess it was worth it.
 2. I isolated the Autocomplete component from the app itself to promote reusability.
+3. I initially included the entire cities list as part of state but I, in my googlemimics branch, made it a constant. The state now includes 'suggestedCities' only. This I thought was cleaner and was required when I was integrating the google-like ux features.
