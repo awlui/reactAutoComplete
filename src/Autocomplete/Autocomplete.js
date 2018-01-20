@@ -41,7 +41,7 @@ class Autocomplete extends Component {
   onSearchInput = (event) => {
     const lowerCased = event.target.value.toLowerCase();
     this.setState({
-      currentInput: lowerCased,
+      currentInput: event.target.value,
       suggestedCities: CITIES.filter((city) => city.startsWith(lowerCased)),
       dirty: this.state.dirty || lowerCased.length >= 3 ,
       currentIndex: undefined,
